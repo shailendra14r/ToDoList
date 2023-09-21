@@ -12,7 +12,7 @@ const cookieParser = require('cookie-parser');
 const privateKey = process.env.PRIVATE_KEY;
 const publicKey = process.env.PUBLIC_KEY;
 
-// Basic
+// Basic set up
 const app = express();
 app.set('view engine','ejs');
 
