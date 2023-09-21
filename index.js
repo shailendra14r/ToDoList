@@ -9,8 +9,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 
 // Getting values of key
-const privateKey = dotenv.PRIVATE_KEY;
-const publicKey = dotenv.PUBLIC_KEY;
+const privateKey = process.env.PRIVATE_KEY;
+const publicKey = process.env.PUBLIC_KEY;
 
 // Basic
 const app = express();
