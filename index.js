@@ -8,7 +8,7 @@ const {Schema} = require('mongoose');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 
-// Getting values of key
+// Getting values of keyy
 const privateKey = process.env.PRIVATE_KEY;
 const publicKey = process.env.PUBLIC_KEY;
 
