@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn-SignUp</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div id="registrationBox" class="registrationBox">
+        <h3 id="title" class="title">Sign Up</h3>
+    <form id="form" action="/signup" method="POST" enctype="application/x-www-form-urlencoded">
+        <div id="userName" class="inputBox">
+            <img class="icons leftWidth" src="icons/user.png"></img>
+            <input id="userNameValue" type="text" name="name" placeholder="Name" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="inputBox">
+            <img class="icons leftWidth" src="icons/email.png"></img>
+            <input id="emailValue" type="email" name="email" placeholder="Email" spellcheck="false">
+        </div>
+        <div class="inputBox">
+            <img class="icons leftWidth" src="icons/padlock.png"></img>
+            <input id="passwordValue" type="password" name="password" placeholder="Password">
+            <button class="icons eye">
+                <img id="eye1" class="eyeButton" src="icons/hide.png"></img>
+            </button>
+        </div>
+        <div id="confirmPassword" class="inputBox">
+            <img class="icons leftWidth" src="icons/padlock.png"></img>
+            <input id="confirmPasswordValue" type="password" placeholder="Confirm Password">
+            <button class="icons eye" >
+                <img id="eye2" class="eyeButton" src="icons/hide.png"></img>
+            </button>
+        </div>
+        <div class="inputBox small">Forgot password? <a target="_blank" href="https://www.google.com">Click here</a></div>
+        <div class="inputBox">
+            <button id="signUp" class="button">Sign up</button>
+            <button id="signIn" class="button">Sign in</button>
+        </div>
+    </div>
+</form>
+    <script src="login.js"></script>
+</body>
+</html>

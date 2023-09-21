@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="homeCSS.css">
+</head>
+<body>
+    <h1>What's up <%= name %></h1>
+    <p>
+        Create your list?<br>
+        What do you want to add on your list?
+    </p>
+    <div class="notemaker">
+    <textarea name="note" id="note" spellcheck="false"></textarea>
+    <div class="categories">
+        <label class="category" for="bussiness">
+            <input id="bussiness" class="categoriesItem" type="radio" name="category" value="bussiness" checked><br>
+            Bussiness
+        </label>
+        <label class="category" for="personal">
+            <input id="personal" class="categoriesItem" type="radio" name="category" value="personal"><br>
+            Personal
+        </label>
+    </div>
+    </div>
+    <button id="add" class="button">Add To Do</button>
+    <div class="toDoList">Added to do list<br>
+        <list id="notes">
+            <% if(notes.length === 0){ %>
+                <div id="empty" class="empty">
+                    Add a item to your list
+                </div>
+            <% } else{ %>
+            <% notes.forEach(function(note){ %>
+            <li class="note">
+                <span class="type <%= note.category %>"></span>
+                <p class="msg"><%= note.message %></p>
+                <span class="date"><%= note.time %></span>
+                <button class="edit">Edit</button>
+                <button class="delete" onclick="deleteme(event)">Delete</button>
+            </li>
+            <% }); %>
+            <% } %>
+        </list>
+    </div>
+    <form action="/logout" method="GET">
+        <button type="submit" id="logout">Log Out</button>
+    </form>
+</body>
+<script src="homeJs.js"></script>
+</html>

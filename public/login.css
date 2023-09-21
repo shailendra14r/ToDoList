@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: sans-serif;
+    color: black;
+    background-color: darkslateblue;
+}
+.registrationBox{
+    margin: calc(50vh - 170px) auto;
+    width: 340px;
+    height: 380px;
+    border-radius: 10px;
+    box-shadow: -5px -5px 8px rgb(118, 108, 187), 5px 5px 8px rgb(60, 51, 116), -5px -5px 8px inset rgb(118, 108, 187), 5px 5px 8px inset rgb(60, 51, 116);
+    border: 8px solid darkslateblue;
+}
+.title{
+    margin-bottom: 20px;
+    padding-top: 20px;
+    font-size: 35px;
+    text-align: center;
+}
+.title::after{
+    display: block;
+    content: "";
+    margin: 5px auto;
+    height: 5px;
+    width: 80px;
+    background-color: rgb(33, 29, 60);
+    border-radius: 10px;
+}
+.message{
+    color: #FFE569;
+    animation: remove 1s 1s 1 forwards;
+}
+.inputBox{
+    margin: 15px auto;
+    height: 30px;
+    width: 80%;
+    display: block;
+    position: relative;
+}
+input{
+    padding: 0px 28px;
+    height: 100%;
+    width: 100%;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    caret-color: grey;
+    background-color: darkslateblue;
+    text-decoration: none;
+    box-shadow: -3px -3px 6px rgb(118, 108, 187), 3px 3px 6px rgb(60, 51, 116);
+}
+input:focus{
+    outline: none;
+    box-shadow: -5px -5px 10px rgb(118, 108, 187), 5px 5px 10px rgb(60, 51, 116);
+    height: 108%;
+    width: 102%;
+}
+/* No Idea but its working */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+.small{
+    font-size: small;
+}
+.button{
+    height: 25px;
+    width: 40%;
+    border-radius: 10px;
+    border: none;
+    background-color: darkslateblue;
+    box-shadow: -3px -3px 6px rgb(118, 108, 187), 5px 3px 6px rgb(43, 37, 84);
+}
+.button:active{
+    box-shadow: 3px 3px 6px inset rgb(60, 51, 116), 3px 3px 6px inset rgb(60, 51, 116);
+}
+#signUp{
+    float: left;
+}
+#signIn{
+    float: right;
+}
+.eyeButton{
+    height: 20px;
+    width: 20px;
+}
+.icons{
+    outline: none;
+    border: none;
+    padding: 0px;
+    position: absolute;
+    top: 5px;
+    height: 20px;
+    width: 20px;
+    background-color: inherit;
+}
+.leftWidth{
+    left: 4px;
+}
+.eye{
+    right: 4px;
+    cursor: pointer;
+}
+a{
+    color: grey;
+    cursor: pointer;
+}
+
+@keyframes remove{
+    0%{
+        opacity: 1;
+    }
+    60%{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100%{
+        opacity: 0;
+        height: 0px;
+    }
+}
+
+/* Other Classes */
+.none{
+    display: none;
+}
