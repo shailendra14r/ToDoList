@@ -24,7 +24,7 @@ app.use(express.static(path.resolve(__dirname,'./public')));
 
 // Database Connection
 const dbConnection = async (req,res)=>{
-    await mongoose.connect(process.env.TEST_URL);
+    await mongoose.connect(process.env.DB_URL);
     console.log('DATABASE CONNECTED');
 }
 dbConnection().catch(err=> console.log(err));
