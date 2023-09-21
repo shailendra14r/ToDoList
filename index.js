@@ -7,11 +7,13 @@ const mongoose = require('mongoose');
 const {Schema} = require('mongoose');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const fs = require('fs');
+// const fs = require('fs');
 
 // Getting values of key
-const privateKey = fs.readFileSync('./private.key','utf-8');
-const publicKey = fs.readFileSync('./public.key','utf-8');
+// const privateKey = fs.readFileSync('./private.key','utf-8');
+const privateKey = dotenv.PRIVATE_KEY
+// const publicKey = fs.readFileSync('./public.key','utf-8');
+const publicKey = dotenv.PUBLIC_KEY
 
 // Basic
 const app = express();
