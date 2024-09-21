@@ -210,7 +210,8 @@ app.get('/logout', auth, (req, res)=>{
     res.clearCookie('token').render(path.resolve(__dirname,'./views/index.ejs'));
 });
 
-app.listen(process.env.PORT,()=>{
+const port  = process.env.PORT || 8080;
+app.listen(port,()=>{
     console.log('Server Started');
 })
         
