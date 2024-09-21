@@ -12,14 +12,17 @@ const cookieParser = require('cookie-parser');
 
 
 
+// Getting values of keyy
+const privateKey = process.env.PRIVATE_KEY;
+const publicKey = process.env.PUBLIC_KEY;
 // Getting values of key
 // const privateKey = fs.readFileSync('./private.key','utf-8');
-const privateKey = process.env.PRIVATE_KEY;
+// const privateKey = process.env.PRIVATE_KEY;
 // const publicKey = fs.readFileSync('./public.key','utf-8');
-const publicKey = process.env.PRIVATE_KEY;
+// const publicKey = process.env.PRIVATE_KEY;
 
 
-// Basic
+// Basic set up
 const app = express();
 app.set('view engine','ejs');
 
@@ -31,6 +34,7 @@ app.use(express.static(path.resolve(__dirname,'./public')));
 
 // Database Connection
 const dbConnection = async (req,res)=>{
+    await mongoose.connect(process.env.DB_URL);
     await mongoose.connect(process.env.DB_URL);
     // await mongoose.connect(process.env.DB_URL);
     console.log('DATABASE CONNECTED');
