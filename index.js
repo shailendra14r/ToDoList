@@ -2,6 +2,7 @@ const express = require('express');
 const ejs = require('ejs');
 const bcrypt = require('bcrypt'); 
 const jwt = require('jsonwebtoken'); 
+// if use process.env then use config() otherwie .config().parsed
 const dotenv = require('dotenv').config();
 const mongoose = require('mongoose');
 const {Schema} = require('mongoose');
@@ -9,11 +10,14 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 // const fs = require('fs');
 
+
+
 // Getting values of key
 // const privateKey = fs.readFileSync('./private.key','utf-8');
-const privateKey = dotenv.PRIVATE_KEY
+const privateKey = process.env.PRIVATE_KEY;
 // const publicKey = fs.readFileSync('./public.key','utf-8');
-const publicKey = dotenv.PUBLIC_KEY
+const publicKey = process.env.PRIVATE_KEY;
+
 
 // Basic
 const app = express();
@@ -27,7 +31,8 @@ app.use(express.static(path.resolve(__dirname,'./public')));
 
 // Database Connection
 const dbConnection = async (req,res)=>{
-    await mongoose.connect(process.env.TEST_URL);
+    await mongoose.connect(process.env.DB_URL);
+    // await mongoose.connect(process.env.DB_URL);
     console.log('DATABASE CONNECTED');
 }
 dbConnection().catch(err=> console.log(err));
@@ -124,6 +129,10 @@ app.post('/signin',async (req, res)=>{
 
 // Authentication Middleware
 const auth = function(req, res, next){
+    // console.log('***************************************************************************');
+    // console.log(req.ip);
+    // console.log(req['User-Agent']);
+
     try{
         // Getting token
         const token = req.cookies.token;
